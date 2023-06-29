@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <header class="header">
+            <div class="header__container">
+                <div class="header__container__block">
+                    <div class="header__container__block-col">
+                        <div class="logotype" title="Логотип: СТУДИКА"></div>
+                        <div class="place">
+                            <div class="place-mark" id="openPopup">
+                                <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <g id="city">
+                                        <path id="Vector 63"
+                                            d="M7.55404 18.5638L21.9471 8.59494C22.4542 8.24375 23.0659 8.71826 22.8519 9.29672L16.7764 25.717C16.5704 26.2738 15.8135 26.323 15.6136 25.7927L13.6839 20.6718C13.607 20.4677 13.4267 20.3279 13.2099 20.3042L7.77002 19.7088C7.20659 19.6471 7.06601 18.9018 7.55404 18.5638Z"
+                                            fill="#A7A7A7" />
+                                        <rect x="0.5" y="0.5" width="31" height="31" rx="15.5" stroke="#A7A7A7" />
+                                    </g>
+                                </svg>
+                            </div>
+                            <p class="place-city">Москва</p>
+
+                            <div class="popup">
+                                <div class="popup__body">
+                                    <div class="popup__body__block">
+                                        <div class="input__block">
+                                            <input type="text" id="writeCity" class="input__block-input" placeholder="Регион, город, населенный пункт">
+                                            <div class="input__block-x_mark">&#10006</div>
+                                        </div>
+                                        <div class="save__block">
+                                            
+                                        </div>
+                                    </div>  
+                                    <div class="popup__body__block">
+                                        <div class="city__container" id="containerForCity">
+                
+                                        </div>
+                                    </div>
+                                    <button class="btn__save">СОХРАНИТЬ</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="search">
+                            <input type="text" name="" id="" class="search-input"
+                                placeholder="Учебное заведение, специальность или профессия">
+                            <button class="search-btn">
+                                <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <g id="search">
+                                        <path id="Union" fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M9.7 15.65C9.7 12.3639 12.3639 9.7 15.65 9.7C18.9361 9.7 21.6 12.3639 21.6 15.65C21.6 17.2528 20.9662 18.7076 19.9356 19.7774C19.9063 19.7999 19.8781 19.8246 19.8513 19.8515C19.8245 19.8783 19.7998 19.9065 19.7773 19.9358C18.7075 20.9663 17.2527 21.6 15.65 21.6C12.3639 21.6 9.7 18.9361 9.7 15.65ZM20.4249 21.6272C19.1162 22.674 17.4562 23.3 15.65 23.3C11.425 23.3 8 19.875 8 15.65C8 11.425 11.425 8 15.65 8C19.875 8 23.3 11.425 23.3 15.65C23.3 17.4563 22.674 19.1164 21.627 20.4251L24.7509 23.549C25.0828 23.8809 25.0828 24.4191 24.7509 24.751C24.4189 25.083 23.8807 25.083 23.5488 24.751L20.4249 21.6272Z"
+                                            fill="#A7A7A7" />
+                                    </g>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="header__container__block-col">
+                        <div class="user">
+                            <div class="user-likes">
+                                <svg width="18" height="18" viewBox="0 0 18 18" fill="red"
+                                    xmlns="http://www.w3.org/2000/svg" id="icon">
+                                    <g id="favorite">
+                                        <path id="Vector"
+                                            d="M9 16.0125L7.9125 15.0225C4.05 11.52 1.5 9.21 1.5 6.375C1.5 4.065 3.315 2.25 5.625 2.25C6.93 2.25 8.1825 2.8575 9 3.8175C9.8175 2.8575 11.07 2.25 12.375 2.25C14.685 2.25 16.5 4.065 16.5 6.375C16.5 9.21 13.95 11.52 10.0875 15.03L9 16.0125Z"
+                                            fill="#A7A7A7" />
+                                    </g>
+                                </svg>
+                                <div id="likesCounter">0</div>
+                            </div>
+                            <div class="user__account">
+                                <div class="user__account-name">Gurgen</div>
+                                <div class="user__account-logo"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="header__container__block">
+                    <nav class="scroll">
+                        <li class="scroll-block">Вузы</li>
+                        <li class="scroll-block">Колледжи</li>
+                        <li class="scroll-block">Техникумы</li>
+                        <li class="scroll-block">Училища</li>
+                        <li class="scroll-block">Специальности</li>
+                        <li class="scroll-block">Профессии</li>
+                        <li class="scroll-block">Отзывы</li>
+                        <li class="scroll-block">Учебным заведениям</li>
+                        <li class="scroll-block">Тест на профориентацию</li>
+                        <li class="scroll-block">Абиутриентам</li>
+                        <li class="scroll-block">Студентам</li>
+                    </nav>
+                    <button class="next__scroll">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g id="arrow right">
+                                <path id="Vector" d="M13 11L19 17L13 23" stroke="#222222" stroke-linecap="round" />
+                            </g>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </header>
+        <main class="main">
+            <div class="main__container">
+                <div class="localize color_grey">
+                    <div class="localize__block">Москва</div>
+                    <div class="localize__block">Высшее образование</div>
+                    <div class="localize__block">Вузы</div>
+                    <div class="localize__block">МГТУ им. Н.Э. Баумана</div>
+                </div>
+                <div class="info">
+                    <div class="info__block">
+                        <div class="info__block-logo">
+                            <img src="../img/main-logo.png" alt="gg">
+                        </div>
+                        <div class="buttons__container">
+                            <button class="buttons__container-button">оставить отзыв</button>
+                            <button class="buttons__container-button">проверить шансы поступить</button>
+                        </div>
+                    </div>
+                    <div class="info__block second">
+                        <div class="dop__container">
+                            <div class="dop__container__block">
+                                <h1 class="dop__container__block-main_zag">Московский государственный технический
+                                    университет имени Н.Э. Бáумана</h1>
+                            </div>
+                            <div class="dop__container__block">
+                                <button class="dop__container__block-btn">
+                                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <g id="favorite">
+                                            <path id="Vector"
+                                                d="M9 16.0125L7.9125 15.0225C4.05 11.52 1.5 9.21 1.5 6.375C1.5 4.065 3.315 2.25 5.625 2.25C6.93 2.25 8.1825 2.8575 9 3.8175C9.8175 2.8575 11.07 2.25 12.375 2.25C14.685 2.25 16.5 4.065 16.5 6.375C16.5 9.21 13.95 11.52 10.0875 15.03L9 16.0125Z"
+                                                fill="#A7A7A7" />
+                                        </g>
+                                    </svg>
+                                    <p class="color_grey">В Избранное</p>
+                                </button>
+                                <div class="icons__block">
+                                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <g id="bell">
+                                            <path id="Vector"
+                                                d="M22 12C22 10.4087 21.3679 8.88258 20.2426 7.75736C19.1174 6.63214 17.5913 6 16 6C14.4087 6 12.8826 6.63214 11.7574 7.75736C10.6321 8.88258 10 10.4087 10 12C10 19 7 21 7 21H25C25 21 22 19 22 12Z"
+                                                stroke="#A7A7A7" stroke-width="2" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                            <path id="Vector_2"
+                                                d="M17.73 25C17.5542 25.3031 17.3019 25.5547 16.9982 25.7295C16.6946 25.9044 16.3504 25.9965 16 25.9965C15.6496 25.9965 15.3054 25.9044 15.0018 25.7295C14.6982 25.5547 14.4458 25.3031 14.27 25"
+                                                stroke="#A7A7A7" stroke-width="2" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                        </g>
+                                    </svg>
+                                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <g id="share">
+                                            <path id="Union" fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M16.7254 10.1429V18H15.2417V10.1429L13.0162 12.5L12 11.4842L15.9835 7L20 11.4842L18.9509 12.5L16.7254 10.1429ZM7 15V23V24H8H24H25V23V15H23V22H9V15H7Z"
+                                                fill="#A7A7A7" />
+                                        </g>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dop__container">
+                            <div class="dop__container__block">
+                                <div class="rate">
+                                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <g id="star">
+                                            <path id="Vector"
+                                                d="M9 12.9525L13.635 15.75L12.405 10.4775L16.5 6.93L11.1075 6.4725L9 1.5L6.8925 6.4725L1.5 6.93L5.595 10.4775L4.365 15.75L9 12.9525Z"
+                                                fill="#EFD967" />
+                                        </g>
+                                    </svg>
+                                    <b class="rate-num">2.4</b>
+                                    <p class="rate-says color_grey">
+                                        (75 отзывов)
+                                    </p>
+                                </div>
+                                <div class="list__info color_grey">
+                                    <li class="list__info-block">Москва, ул. Новочеремушкинская, д. 69</li>
+                                    <li class="list__info-block">Приемная комиссия: 7 (499) 181 21 33</li>
+                                </div>
+                            </div>
+                            <div class="dop__container__block last">
+                                <div class="update">
+                                    <div class="update-date color_grey">Обновлено 11.11.2011</div>
+                                    <p class="update-btn">Сообщить об ошибке</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="main__container">
+                <div class="main__container__row">
+                    <div class="main__container__col">
+                        <table class="table color_grey">
+                            <tr class="table-row">
+                                <td class="table-text">Основная информация</td>
+                                <td class="table-count">100</td>
+                            </tr>
+                            <tr class="table-row">
+                                <td class="table-text">Специальности</td>
+                                <td class="table-count">100</td>
+                            </tr>
+                            <tr class="table-row">
+                                <td class="table-text">Об университете</td>
+                                <td class="table-count">100</td>
+                            </tr>
+                            <tr class="table-row">
+                                <td class="table-text">Контакты</td>
+                                <td class="table-count">100</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="main__container__col">
+                        <h1 class="main__container__col-zag">Основная информация</h1>
+                        <div class="container">
+                            <div class="aside">
+                                <div class="aside__block">
+                                    <div class="aside__block-zag color_blue">4 532</div>
+                                    <div class="aside__block-txt color_grey">платных мест</div>
+                                </div>
+                                <div class="aside__block">
+                                    <div class="aside__block-zag color_blue">1 702</div>
+                                    <div class="aside__block-txt color_grey">бюджетных мест</div>
+                                </div>
+                            </div>
+                            <div class="aside">
+                                <div class="aside__block">
+                                    <div class="aside__block-zag">1 место</div>
+                                    <div class="aside__block-txt color_grey">в Санкт-Петербурге</div>
+                                </div>
+                                <div class="aside__block">
+                                    <div class="aside__block-zag">12 место</div>
+                                    <div class="aside__block-txt color_grey">в РФ</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="../js/script.js"></script>
+</body>
+
+</html>
