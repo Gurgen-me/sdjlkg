@@ -190,7 +190,6 @@ body {
 }
 .header__container__block-col .user-likes #likesCounter {
   font-size: 1.2rem;
-  font-weight: bold;
 }
 .header__container__block-col .user__account {
   display: flex;
@@ -201,7 +200,7 @@ body {
   width: 35px;
   height: 35px;
   border-radius: 50%;
-  background: url(../img/user-logo.jpg);
+  background: url(../img/avatar.jpg);
   background-size: cover;
   margin-left: 0.4rem;
 }
@@ -261,7 +260,7 @@ body {
 }
 .main__container .localize__block::before {
   position: absolute;
-  content: url(../img/avatar.jpg);
+  content: url(../img/arrow-icon.png);
   left: -30px;
 }
 .main__container .info {
@@ -323,7 +322,7 @@ body {
   color: #fff;
   margin-right: 1rem;
 }
-.main__container .info__block .buttons__container-button:nth-last-child(1) {
+.main__container .buttons__container-button:nth-last-child(1) {
   background: #dfe9f5;
   color: #0656b4;
 }
@@ -370,7 +369,7 @@ body {
   height: 100%;
 }
 .main__container .info__block .dop__container__block .rate-num {
-  margin: 0 4px;
+  margin: 0 5px;
 }
 .main__container .info__block .dop__container__block .list__info {
   display: flex;
