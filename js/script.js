@@ -1,12 +1,59 @@
-const container = document.getElementById('containerForCity');
-const xMark = document.querySelector('.input__block-x_mark');
+const containerCity = document.getElementById('containerForCity');//Список городов
 const writeCity = document.getElementById('writeCity');
-const openPopupBtn = document.getElementById('openPopup');
-const cityNameChange = document.querySelector('.place-city');
-const popup = document.querySelector('.popup')
+let city = document.getElementById("city")//Кнопка открытия смены городов
+let cityValue = document.querySelector('#city');//Спан содержащий текущий город
+const popup = document.querySelector('.popup')//Скрытое меню поиска
 
 
-fetch('https://proverili.ru/api/areas', { method: 'POST' }) //Получение города из api
+const scrollArrow = document.getElementById("scrollArrow")//Кнопка скролла влево
+city.addEventListener('click', () => {//Открытие меню поиска
+    popup.classList.toggle('open')
+})
+
+scrollArrow.addEventListener('click', () => {
+    let secondOne = document.getElementById("secondOne")
+    let secondTwo = document.getElementById("secondTwo")
+
+    let lastLiOne = document.getElementById("lastLiOne")
+    let lastLiTwo = document.getElementById("lastLiTwo")
+    //Дизейбл первых двух пунктов меню
+    secondOne.classList.add("disablMenu")
+    secondTwo.classList.add("disablMenu")
+    //Добавление последних двух пунктов меню
+    lastLiOne.classList.remove("disablMenu")
+    lastLiTwo.classList.remove("disablMenu")
+    lastLiOne.classList.add("visible")
+    lastLiTwo.classList.add("visible")
+    //Дизейбл правой стрелки
+    scrollArrow.classList.add("disabl")
+    // Создание скролла влево
+    let leftScrollArrow = document.createElement('img')
+    leftScrollArrow.className = ("LeftScroll")
+    leftScrollArrow.setAttribute("src", "./img/arrow left.png");
+    document.body.append(leftScrollArrow)
+    // Обратный скролл
+    leftScrollArrow.addEventListener('click', () => {
+        // Скрытие 2х последних пунктов меню
+        lastLiOne.classList.remove("visible")
+        lastLiTwo.classList.remove("visible")
+        lastLiOne.classList.add("disablMenu")
+        lastLiTwo.classList.add("disablMenu")
+        // Возврат первых двух пунктов меню
+        secondOne.classList.remove("disablMenu")
+        secondTwo.classList.remove("disablMenu")
+        secondOne.classList.add("visible")
+        secondTwo.classList.add("visible")
+        // Возврат кнопки 'вправо'
+        scrollArrow.classList.add("visible")
+        scrollArrow.classList.remove("disabl")
+        // Cкрытие кнопки 'влево'
+        leftScrollArrow.remove()
+    })
+})
+function addSelector(string, pos, len) { //Выделение текста
+    return string.slice(0, pos) + '<mark>' + string.slice(pos, pos + len) + '</mark>' + string.slice(pos + len)
+}
+fetch('https://proverili.ru/api/areas', { method: 'POST' }) //Получение города url (name:)
     .then(res => {
         if (res.ok) {
             return res.json()
@@ -17,31 +64,30 @@ fetch('https://proverili.ru/api/areas', { method: 'POST' }) //Получение
         }
     })
     .then(data => {
+        for (const key in data) {
+            for (const keys in data[key].cities) {
+                const createCityBlock = document.createElement('div')
+                createCityBlock.className = 'cityBlock'
+                createCityBlock.innerText = data[key].cities[keys].name
 
-        JSON.stringify(data)
-        for (const key in data) { //Создание блоков с субъектами
-            const createCityBlock = document.createElement('div')
-            createCityBlock.className = 'city__container-block'
-            createCityBlock.innerHTML = data[key].name
+                containerCity.append(createCityBlock)
 
-            container.append(createCityBlock)
-
-            createCityBlock.addEventListener('click', () => {
-                cityNameChange.innerHTML = createCityBlock.innerText
-            })
+                createCityBlock.addEventListener('click', () => {
+                    cityValue.innerHTML = createCityBlock.innerText
+                })
+            }
         }
     })
-    .catch(error => {
+    .catch(error => {//Ошибка в случае ошибки
         console.log(error)
     })
 
-writeCity.oninput = function () { //Реализация поиска
+writeCity.oninput = function () { //Поиск
     let val = this.value.trim();
-    const cityBlock = document.querySelectorAll('.city__container-block')
-
+    const cityBlock = document.querySelectorAll('.cityBlock')
     if (val != '') {
-       
-        cityBlock.forEach(function(elem) {
+
+        cityBlock.forEach(function (elem) {
             if (elem.innerText.search(val) == -1) {
                 elem.classList.add('hide');
                 elem.innerHTML = elem.innerText
@@ -50,36 +96,13 @@ writeCity.oninput = function () { //Реализация поиска
                 elem.classList.remove('hide');
                 let str = elem.innerText;
                 elem.innerHTML = addSelector(str, elem.innerText.search(val), val.length)
-            }            
+            }
         })
-    } 
+    }
     else {
-        cityBlock.forEach(function(elem) {
+        cityBlock.forEach(function (elem) {
             elem.classList.remove('hide')
             elem.innerHTML = elem.innerText
         })
-    }   
+    }
 }
-
-function addSelector(string, pos, len) { //Выделение текста
-    return string.slice(0, pos) + '<mark>' + string.slice(pos, pos + len) + '</mark>' + string.slice(pos+len)
-}
-
-openPopupBtn.addEventListener('click', () => {
-    popup.classList.toggle('_open')
-})
-
-
-const scrollBtn = document.getElementById('header__container__block');
-const toScrollMenu = document.querySelector('.scroll');
-
-scrollBtn.addEventListener('click', () => {
-    toScrollMenu.classList.toggle('scroll')
-})
-
-async function hedscrol() {
-    let url = 'https://proverili.ru/api/areas';
-    let response = await fetch(url, { method: 'POST' });
-    console.log(response.json())
-}
-hedscrol()
