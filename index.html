@@ -5,7 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
 </head>
 
 <body>
@@ -17,7 +19,7 @@
                         <div class="logotype" title="Логотип: СТУДИКА"></div>
                         <div class="place">
                             <div class="place-mark" id="openPopup">
-                                <img src="../img/place-mark.png" alt="">
+                                <img src="./img/place-mark.png" alt="">
                             </div>
                             <p class="place-city">Москва</p>
 
@@ -46,7 +48,7 @@
                             <input type="text" name="" id="" class="search-input"
                                 placeholder="Учебное заведение, специальность или профессия">
                             <button class="search-btn">
-                                <img src="../img/search-pic.png" id="search">
+                                <img src="./img/search-pic.png" id="search">
                             </button>
                         </div>
                     </div>
@@ -64,7 +66,7 @@
                     </div>
                 </div>
                 <div class="header__container__block">
-                    <nav class="scroll">
+                    <!-- <nav class="scroll">
                         <li class="scroll-block">Вузы</li>
                         <li class="scroll-block">Колледжи</li>
                         <li class="scroll-block">Техникумы</li>
@@ -79,7 +81,21 @@
                     </nav>
                     <button class="next__scroll" id="scrollCaroosel">
                         <img src="../img/arrow-header.png" alt="">
-                    </button>
+                    </button> -->
+
+                    <div class="scroll">
+                        <div class="scroll-block">Вузы</div>
+                        <div class="scroll-block">Колледжи</div>
+                        <div class="scroll-block">Техникумы</div>
+                        <div class="scroll-block">Училища</div>
+                        <div class="scroll-block">Специальности</div>
+                        <div class="scroll-block">Профессии</div>
+                        <div class="scroll-block">Отзывы</div>
+                        <div class="scroll-block">Учебным заведениям</div>
+                        <div class="scroll-block">Тест на профориентацию</div>
+                        <div class="scroll-block">Абиутриентам</div>
+                        <div class="scroll-block">Студентам</div>
+                    </div>
                 </div>
             </div>
         </header>
@@ -94,7 +110,7 @@
                 <div class="info">
                     <div class="info__block">
                         <div class="info__block-logo">
-                            <img src="../img/main-logo.png" alt="gg">
+                            <img src="./img/main-logo.png" alt="gg">
                         </div>
                         <div class="buttons__container">
                             <button class="buttons__container-button">оставить отзыв</button>
@@ -226,7 +242,14 @@
             </div>
         </main>
     </div>
-    <script src="../js/script.js"></script>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0sSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"></script>
+    
+    <script src="./slick/slick.min.js"></script>
+
+
+    <script src="./js/script.js"></script>
 </body>
 
 </html>
