@@ -69,28 +69,17 @@ openPopupBtn.addEventListener('click', () => {
     popup.classList.toggle('_open')
 })
 
-$('.single-item').slick({
-    centerMode: true,
-    slidesToShow: 3,
-  });
 
-  $('.single-item').slick({
-	infinite: true,
-	dots: true,
-	slidesToShow: 3,
-	slidesToScroll: 1,
-	responsive: [
-	    {
-	      breakpoint: 768,
-	      settings: {
-	        slidesToShow: 2,
-	      }
-	    },
-	    {
-	      breakpoint: 480,
-	      settings: {
-	        slidesToShow: 1,
-	      }
-	    }
-    ]
-});
+const scrollBtn = document.getElementById('header__container__block');
+const toScrollMenu = document.querySelector('.scroll');
+
+scrollBtn.addEventListener('click', () => {
+    toScrollMenu.classList.toggle('scroll')
+})
+
+async function hedscrol() {
+    let url = 'https://proverili.ru/api/areas';
+    let response = await fetch(url, { method: 'POST' });
+    console.log(response.json())
+}
+hedscrol()
