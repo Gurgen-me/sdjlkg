@@ -38,9 +38,7 @@ fetch('https://proverili.ru/api/areas', { method: 'POST' }) //Получение
 writeCity.oninput = function () { //Реализация поиска
     let val = this.value.trim();
     const cityBlock = document.querySelectorAll('.city__container-block')
-    // xMark.addEventListener('click', () => {
-    //     val = ''
-    // })
+
     if (val != '') {
        
         cityBlock.forEach(function(elem) {
