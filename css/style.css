@@ -957,3 +957,7 @@ mark {
 .main__container .aside__block-txt {
   font-size: 0.8rem;
 }
+#idi{
+  text-decoration: none;
+  color: #000;
+}
